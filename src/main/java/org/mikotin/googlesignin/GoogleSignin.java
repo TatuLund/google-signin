@@ -18,6 +18,8 @@ import org.mikotin.googlesignin.events.internal.InternalSignOutEvent;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.HtmlImport;
+import com.vaadin.flow.component.dependency.JsModule;
+import com.vaadin.flow.component.dependency.NpmPackage;
 import com.vaadin.flow.shared.Registration;
 import com.vaadin.flow.shared.ui.LoadMode;
 
@@ -42,8 +44,14 @@ import com.vaadin.flow.shared.ui.LoadMode;
  *
  */
 @Tag("google-signin")
-@HtmlImport(value = "bower_components/google-signin/google-signin.html",
-        loadMode = LoadMode.LAZY)
+@NpmPackage(value = "@polymer/font-roboto", version = "3.0.0-pre.18")
+@NpmPackage(value = "@polymer/iron-icon", version = "3.0.0-pre.18")
+@NpmPackage(value = "@polymer/iron-iconset-svg", version = "3.0.0-pre.18")
+@NpmPackage(value = "@polymer/iron-flex-layout", version = "3.0.0-pre.18")
+@NpmPackage(value = "@polymer/paper-ripple", version = "3.0.0-pre.18")
+@NpmPackage(value = "@polymer/paper-material", version = "3.0.0-pre.18")
+@NpmPackage(value = "@google-web-components/google-apis", version = "3.0.0")
+@JsModule(value = "./google-signin.js")
 public class GoogleSignin extends Component {
     private final GoogleIdTokenVerifier tokenVerifier;
     private String clientId;
